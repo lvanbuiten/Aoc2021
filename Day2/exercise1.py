@@ -19,7 +19,7 @@ for line in lines:
         depth += intValue
 
 position = horizontal * depth
-print("Position of th submarine is on '"+str(position)+"' for horizontal '"+str(horizontal)+"' and depth '"+str(depth)+"'")
+print("Position of the submarine is on '"+str(position)+"' for horizontal '"+str(horizontal)+"' and depth '"+str(depth)+"'")
 
         
 
