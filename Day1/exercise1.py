@@ -10,7 +10,7 @@ increasedCounter = int()
 for line in lines:
     lineValue = int(line)
     if (lastValue != None and (lineValue - lastValue) > 0):
-        increasedCounter = increasedCounter + 1
+        increasedCounter += 1
     lastValue = lineValue
     
 print("Counter for increased values = " + str(increasedCounter))
