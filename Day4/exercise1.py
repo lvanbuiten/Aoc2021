@@ -39,7 +39,7 @@ for line in lines:
 
 for index, fb in enumerate(flatBoards):
     for d in drawnNumbers:
-        fb = re.sub(f"(^|,)+{d}(,|;)+", "\g<1>x\g<2>", fb)
+        fb = re.sub(f"(^|,|;)+{d}(,|;)+", "\g<1>x\g<2>", fb)
         flatBoards[index] = fb
 
 def solved():
