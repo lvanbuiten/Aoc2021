@@ -22,6 +22,13 @@ class Point(NamedTuple):
         enValues = strTyples[1].split(',')
         end = [int(enValues[0]), int(enValues[1])]
 
+        # Optimization 
+        # startV, endV = line.split(" -> ")
+        # x1_s, y1_s = startV.split(",")
+        # x2_s, y2_s = endV.split(",")
+        # start = [int(x1_s), int(y1_s)]
+        # end = [int(x2_s), int(y2_s)]
+
         return cls(start, end)
 
 points = [Point.parse(point) for point in inputFile.read().splitlines()]
@@ -42,6 +49,12 @@ for p in points:
             value += 1 
             coordinates[f'{x},{start}'] = value
             start += 1
+
+        # Optimization 
+        # for y in range(min(p.start[1], p.end[1]), max(p.start[1], p.end[1]) + 1):
+        #     values = ...
+        # using Counter (import collections), checking for key is not neccessary.
+
     # vertical
     elif (p.start[1] == p.end[1]):
         x = p.start[0]
