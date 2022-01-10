@@ -19,7 +19,7 @@ print(f'Initial state is: {input}')
 
 # for key,val in most_common:
 
-for c in input:
+for c in range(max(input)):
     currentTotalFuel = 0
     for i in input:
         currentTotalFuel += abs(i - c)
