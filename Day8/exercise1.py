@@ -8,7 +8,7 @@ import time
 start_time = time.time()
 
 inputFile = open(Path(__file__).with_name('exercise-input.txt'), 'r')
-input = (" ".join([l.split(' | ')[1] for l in inputFile.readlines()])).split()
+input = (" ".join([l.split(' | ')[1] for l in inputFile.read().splitlines()])).split()
 
 
 print(f'Initial state is: {input}')
