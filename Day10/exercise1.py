@@ -15,24 +15,19 @@ corruptionValues = {')':3, ']':57, '}':1197, '>':25137}
 
 print(f'Initial state is: {input}')
 
-values = []
 corruptedChars = []
 
 for line in input:
     bChars = []
-    eChars = []
     for char in list(line):
         if char in pairs.values():
             bChars.extend(char)
         else:
             # compare this character with last opening character.
-            if len(bChars) == 0:
-                break # incomplete line (probably)
             bChar = bChars.pop()
             if pairs[char] != bChar:
                 corruptedChars.extend(char)
                 break # break at first occurrence
-            eChars.extend(char)
 
 answer = sum(corruptionValues[x] for x in corruptedChars)
 
