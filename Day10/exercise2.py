@@ -47,9 +47,9 @@ for x in missingChars:
         v = (v * 5) + missingCharValues[y]
     values.append(v)
 
-
+# Improvement: statistics.median(values)
 values.sort()
-answer = values[int(len(values)/2)] # Improvement: statistics.median(values)
+answer = values[int(len(values)/2)] 
 
 print(f"Done! Answer is '{answer}' for question What is the total syntax error score for those errors?, --- {(time.time() - start_time)} seconds ---")
 
