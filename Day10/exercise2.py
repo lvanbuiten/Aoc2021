@@ -11,6 +11,7 @@ inputFile = open(Path(__file__).with_name('exercise-input.txt'), 'r')
 input = inputFile.read().splitlines()
 
 pairs = {')':'(', ']':'[', '}':'{', '>':'<'}
+# Improvement: pairsInverted = {v: k for k, v in pairs.items()}
 pairsInverted = {'(':')', '[':']', '{':'}', '<':'>'}
 missingCharValues = {')':1, ']':2, '}':3, '>':4}
 
@@ -30,7 +31,8 @@ for line in input:
             if pairs[char] != bChar:
                 skip = True
                 break # break at first occurrence and ignore this line
-
+    # Improvement: use 'Else' (for else loop)
+    # skip can then be discarded. 
     if not skip:
         missingCharsInLine = []
         for char in bChars:
@@ -47,7 +49,7 @@ for x in missingChars:
 
 
 values.sort()
-answer = values[int(len(values)/2)]
+answer = values[int(len(values)/2)] # Improvement: statistics.median(values)
 
 print(f"Done! Answer is '{answer}' for question What is the total syntax error score for those errors?, --- {(time.time() - start_time)} seconds ---")
 
